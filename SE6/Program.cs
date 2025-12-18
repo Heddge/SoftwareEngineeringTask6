@@ -10,6 +10,7 @@ namespace SE6
         {
             Console.WriteLine("Проверяем теорему Ферма:");
 
+            // hello
             // Проверяем разные степени
             for (int n = 2; n <= 5; n++)
             {
