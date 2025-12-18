@@ -4,27 +4,24 @@ namespace SE6
 {
     using System;
 
-    class Program
+    public class Program
     {
+        public static bool CheckFerm(int a, int b, int c, int n) =>
+            Math.Abs(Math.Pow(a, n) + Math.Pow(b, n) - Math.Pow(c, n)) < 0.0001;
+
         static void Main()
         {
-            Console;
             Console.WriteLine("Проверяем теорему Ферма:");
 
             // hello
             // Проверяем разные степени
-            for (int n = 2; n <= 5; n++)
-            {
-                Console.WriteLine($"\nДля степени n={n}:");
-                Console.WriteLine($"3^{n} + 4^{n} = 5^{n} ?");
-
-                double left = Math.Pow(3, n) + Math.Pow(4, n);
-                double right = Math.Pow(5, n);
-
-                Console.WriteLine($"{Math.Pow(3, n)} + {Math.Pow(4, n)} = {left}");
-                Console.WriteLine($"{Math.Pow(3, n) + Math.Pow(4,n)} и {right}");
-                Console.WriteLine($"Равны? {Math.Abs(left - right) < 0.0001}");
-            }
+            for (int a = 1; a <= 5; a++)
+                for (int b = 1; b <= 5; b++)
+                    for (int c = 1; c <= 5; c++)
+                        for (int n = 3; n <= 5; n++)
+                        {
+                            Console.WriteLine($"{n} {a} {b} {c} {CheckFerm(a, b, c, n)}");
+                        }
 
             Console.WriteLine("\nВывод: равенство работает только для n=2!");
         }
