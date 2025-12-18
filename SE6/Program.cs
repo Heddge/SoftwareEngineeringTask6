@@ -8,7 +8,7 @@ namespace SE6
     {
         static void Main()
         {
-            Console;
+            Consolee;
             Console.WriteLine("Проверяем теорему Ферма:");
 
             // hello
